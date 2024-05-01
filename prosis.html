@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porosia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #222; /* Ngjyra e sfondit e errët */
+            color: #fff; /* Ngjyra e tekstit */
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #333; /* Ngjyra e panelit të formës */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Ndriçimi i harkut të hijes */
+        }
+        input[type="text"], input[type="tel"],input[type="number"], select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #555; /* Ngjyra e kufijve të fushave të inputit */
+            border-radius: 5px;
+            box-sizing: border-box;
+            background-color: #444; /* Ngjyra e fushës së inputit */
+            color: #fff; /* Ngjyra e tekstit në input */
+        }
+        button {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        select {
+            background-color: #444; /* Ngjyra e dropdownit */
+            color: #fff; /* Ngjyra e tekstit në dropdown */
+        }
+    </style>
+</head>
+<body>
+
+    <a style="text-decoration: none; color: #fff;" href="index.html">&lt; Kthehu mbrapa</a>
+
+    <br>
+    <br>
+    <br>
+    <br>
+<div class="container">
+    <h2 style="text-align: center;">Porosia e Produktit</h2>
+    <form action="https://api.web3forms.com/submit" method="POST"> 
+
+        <input type="hidden" name="access_key" value="33d7ca73-9bc5-4fdf-b844-938706587b85">
+
+        <input type="text" id="emri" name="emri" placeholder="Emri dhe Mbiemri:" required>
+        <input type="number" id="telefoni" name="telefoni" placeholder="Numri i Telefonit:"  required>
+        <select id="produkti" name="produkti" required>
+            <option value="">Produkti:</option>
+            <option value="Produkti 1 - Dora me Led">Dora me Led</option>
+            <option value="Produkti 2 - Stickeri Wantet me Led">Stickeri Wantet me Led</option>
+            <option value="Produkti 3 - Led Panel">Led Panel</option>
+        </select>
+        <input type="number" id="sasia" name="sasia" placeholder="Sasia:" required>
+        <input type="text" id="vendbanimi" name="vendbanimi" placeholder="Vendbanimi:" required>
+
+        <button type="submit">Dërgo Porosinë</button>
+    </form>
+</div>
+
+<script>
+    function validateForm() {
+        var emri = document.getElementById("emri").value;
+        var telefoni = document.getElementById("telefoni").value;
+        var produkti = document.getElementById("produkti").value;
+        var sasia = document.getElementById("sasia").value;
+        var vendbanimi = document.getElementById("vendbanimi").value;
+        var errorMsg = document.getElementById("errorMsg");
+
+        if (emri === "" || telefoni === "" || produkti === "" || sasia === "" || vendbanimi === "") {
+            errorMsg.textContent = "Ju lutem plotësoni të gjitha fushat!";
+            return false;
+        } else {
+            errorMsg.textContent = ""; 
+            alert("Porosia u krye me sukses!"); 
+            window.location.href = "index.html"; 
+            return true; 
+        }
+    }
+</script>
+</body>
+</html>
